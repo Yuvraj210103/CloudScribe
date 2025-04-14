@@ -1,0 +1,56 @@
+# Ignore node_modules directory (third-party dependencies)
+node_modules
+.npm
+npm-debug.log
+
+# Ignore build directories
+dist/**
+build/**
+
+# Ignore output from Next.js
+.next/**
+
+# Ignore TypeScript declaration files
+*.d.ts
+
+# Ignore environment files
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Ignore lock files (if you don't want Prettier to format them)
+package-lock.json
+yarn.lock
+
+# Ignore coverage reports
+coverage
+
+# Ignore generated files from Prisma or other ORMs
+prisma/generated
+
+# Ignore public assets or static files
+public
+
+# Ignore logs
+*.log
+
+# Ignore markdown files (if you don't want them formatted)
+*.md
+
+# Ignore JSON files (optional, if you don't want them formatted)
+*.json
+
+# Ignore all files in a specific directory (e.g., assets)
+assets/
+
+# Ignore specific files (e.g., a custom configuration file)
+my-custom-config.js
+
+# Ignore specific file extensions (e.g., images, videos)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.svg
