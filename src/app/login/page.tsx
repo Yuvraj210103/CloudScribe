@@ -3,38 +3,41 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
+
 import React from 'react';
 
-const Signup = () => {
+const Login = () => {
   return (
     <div className="flex flex-col gap-4 items-center justify-center w-full h-screen">
       <Card className="w-1/3">
         <CardHeader>
-          <CardTitle className="text-2xl">Signup</CardTitle>
-          <CardDescription>Enter your details below to create your account</CardDescription>
+          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardDescription>Enter your credentials below to login to your account</CardDescription>
         </CardHeader>
         <CardContent>
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email">Name</Label>
-                <Input id="name" type="text" placeholder="john doe" required />
-              </div>
-              <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="m@example.com" required />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="email">Password</Label>
+                <div className="flex items-center">
+                  <Label htmlFor="password">Password</Label>
+                  <a href="#" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+                    Forgot your password?
+                  </a>
+                </div>
                 <Input id="password" type="password" required />
               </div>
-
-              <Button>Verify</Button>
+              <Button type="submit" className="w-full">
+                Login
+              </Button>
             </div>
             <div className="mt-4 text-center text-sm">
-              Already have an account?{' '}
-              <Link href="/login" className="underline underline-offset-4">
-                Login
+              Don&apos;t have an account?{' '}
+              <Link href="/signup" className="underline underline-offset-4">
+                Sign up
               </Link>
             </div>
           </form>
@@ -44,4 +47,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
