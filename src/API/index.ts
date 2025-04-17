@@ -24,6 +24,17 @@ class API {
     });
     return res;
   };
+
+  static authenticate = async ({ email, password }: { email: string; password: string }) => {
+    const res = await RequestHandler.post('/auth/login', {
+      body: {
+        email,
+        password,
+      },
+    });
+
+    return res;
+  };
 }
 
 export default API;

@@ -20,3 +20,10 @@ export const activateUserSchema = z.object({
 });
 
 export type ActivateUserFormFields = z.infer<typeof activateUserSchema>;
+
+export const loginUserSchema = z.object({
+  email: z.string().email({ message: 'Invalid email address' }),
+  password: z.string().min(6),
+});
+
+export type LoginUserFormFields = z.infer<typeof loginUserSchema>;
