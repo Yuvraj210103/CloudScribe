@@ -51,7 +51,7 @@ function Button({
     <Comp
       disabled={isLoading || props.disabled}
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, className }), 'cursor-pointer')}
       {...props}>
       {isLoading && <Loader2 className="animate-spin" />}
       {props.children}

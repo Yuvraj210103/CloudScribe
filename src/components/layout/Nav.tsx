@@ -4,19 +4,40 @@ import React, { useState } from 'react';
 import ThemeToggle from '../ThemeToggle';
 import { LogOutIcon } from 'lucide-react';
 import ConfirmDialog from '../common/ConfirmDialog';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '../ui/navigation-menu';
+import Link from 'next/link';
 
 const Nav = () => {
   const [opened, setOpened] = useState(false);
+
+  const { status } = useSession();
   return (
-    <div className="flex items-center justify-center w-full lg:px-36 px-4 py-2 bg-[rgba(0,0,0,0.2)]">
+    <div className="flex items-center justify-center w-full lg:px-36 px-4 py-2 bg-[#383838] text-white">
       <div className="flex justify-between w-full max-w-[1280px]">
-        <div className="font-semibold text-xl">CloudScribe</div>
+        <div className="flex items-center gap-6">
+          <div className="font-semibold text-xl">CloudScribe</div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/protected/notes">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Notes</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
 
         <div className="flex items-center gap-6">
           <ThemeToggle />
 
-          <LogOutIcon className="cursor-pointer" onClick={() => setOpened(!opened)} />
+          {status === 'authenticated' && <LogOutIcon className="cursor-pointer" onClick={() => setOpened(!opened)} />}
 
           <ConfirmDialog
             open={opened}

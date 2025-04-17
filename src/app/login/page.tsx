@@ -82,7 +82,7 @@ const Login = () => {
                     error={methods.formState.errors.password?.message}
                   />
                 </div>
-                <Button isLoading={isLoading} type="submit" className="w-full">
+                <Button isLoading={isLoading} type="submit" className="w-full cursor-pointer">
                   Login
                 </Button>
               </div>

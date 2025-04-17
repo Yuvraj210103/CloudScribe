@@ -27,3 +27,11 @@ export const loginUserSchema = z.object({
 });
 
 export type LoginUserFormFields = z.infer<typeof loginUserSchema>;
+
+export const createNoteSchema = z.object({
+  title: z.string().min(1),
+  content: z.string().min(1),
+  tag: z.string().optional(),
+});
+
+export type CreateNoteFormFields = z.infer<typeof createNoteSchema>;

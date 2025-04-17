@@ -22,6 +22,8 @@ const DialogDrawer = ({
   negativeCallback,
   trigger,
   isDialogFooterReq = false,
+  isLoading,
+  isFormModal,
 }: {
   children: React.ReactNode;
   opened?: boolean;
@@ -31,6 +33,8 @@ const DialogDrawer = ({
   negativeCallback?: () => void;
   trigger?: React.ReactNode;
   isDialogFooterReq?: boolean;
+  isLoading?: boolean;
+  isFormModal?: boolean;
 }) => {
   if (window.innerWidth <= 640) {
     return (
@@ -50,6 +54,8 @@ const DialogDrawer = ({
                   variant="outline"
                   className=" w-full hover:border-blueButtonHoverBg "
                   onClick={() => {
+                    if (isLoading) return;
+
                     if (setOpened) {
                       setOpened(false);
                     }
@@ -60,8 +66,11 @@ const DialogDrawer = ({
                 </Button>
 
                 <Button
+                  isLoading={isLoading}
                   className="w-full hover:bg-blueButtonHoverBg"
                   onClick={() => {
+                    if (isLoading || isFormModal) return;
+                    console.log('coming inside still');
                     if (setOpened) {
                       setOpened(false);
                     }
@@ -83,7 +92,6 @@ const DialogDrawer = ({
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-
         {children}
         {isDialogFooterReq && (
           <DialogFooter>
@@ -91,6 +99,7 @@ const DialogDrawer = ({
               variant="outline"
               className="mt-4 hover:border-blueButtonHoverBg sm:mr-2 sm:mt-0"
               onClick={() => {
+                if (isLoading) return;
                 if (setOpened) {
                   setOpened(false);
                 }
@@ -101,12 +110,14 @@ const DialogDrawer = ({
             </Button>
 
             <Button
+              isLoading={isLoading}
               className="hover:bg-blueButtonHoverBg"
               onClick={() => {
+                positiveCallback();
+                if (isLoading || isFormModal) return;
                 if (setOpened) {
                   setOpened(false);
                 }
-                positiveCallback();
               }}>
               Okay
             </Button>
