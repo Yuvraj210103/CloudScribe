@@ -49,36 +49,33 @@ const DialogDrawer = ({
           <div className="px-4">{children}</div>
           {isDialogFooterReq && (
             <DrawerFooter className="flex items-center gap-4">
-              <div className="flex w-full items-center gap-4">
-                <Button
-                  variant="outline"
-                  className=" w-full hover:border-blueButtonHoverBg "
-                  onClick={() => {
-                    if (isLoading) return;
+              <Button
+                variant="outline"
+                className=" w-full hover:border-blueButtonHoverBg "
+                onClick={() => {
+                  if (isLoading) return;
 
-                    if (setOpened) {
-                      setOpened(false);
-                    }
-                    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                    negativeCallback && negativeCallback();
-                  }}>
-                  Cancel
-                </Button>
+                  if (setOpened) {
+                    setOpened(false);
+                  }
+                  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                  negativeCallback && negativeCallback();
+                }}>
+                Cancel
+              </Button>
 
-                <Button
-                  isLoading={isLoading}
-                  className="w-full hover:bg-blueButtonHoverBg"
-                  onClick={() => {
-                    if (isLoading || isFormModal) return;
-                    console.log('coming inside still');
-                    if (setOpened) {
-                      setOpened(false);
-                    }
-                    positiveCallback();
-                  }}>
-                  Okay
-                </Button>
-              </div>
+              <Button
+                isLoading={isLoading}
+                className="w-full hover:bg-blueButtonHoverBg"
+                onClick={() => {
+                  if (isLoading || isFormModal) return;
+                  if (setOpened) {
+                    setOpened(false);
+                  }
+                  positiveCallback();
+                }}>
+                Okay
+              </Button>
             </DrawerFooter>
           )}
         </DrawerContent>

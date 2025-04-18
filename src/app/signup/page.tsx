@@ -93,8 +93,8 @@ const Signup = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="flex flex-col gap-4 items-center justify-center w-full h-screen">
-        <Card className="w-1/3">
+      <div className="flex flex-col gap-4 items-center justify-center w-full h-full pb-12">
+        <Card className="w-full md:w-[40%] bg-transparent md:bg-card">
           <CardHeader>
             <CardTitle className="text-2xl">Sign up</CardTitle>
             <CardDescription>Enter your details below to create your account</CardDescription>

@@ -47,8 +47,8 @@ const Login = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="flex flex-col gap-4 items-center justify-center w-full h-screen">
-        <Card className="w-1/3">
+      <div className="flex flex-col gap-4 items-center justify-center w-full h-full">
+        <Card className="w-full md:w-1/3 bg-transparent md:bg-card">
           <CardHeader>
             <CardTitle className="text-2xl">Login</CardTitle>
             <CardDescription>Enter your credentials below to login to your account</CardDescription>
