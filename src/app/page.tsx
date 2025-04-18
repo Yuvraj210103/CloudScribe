@@ -34,23 +34,23 @@ export default function Home() {
           </section>
 
           {/* Features Section */}
-          <section className="mt-20 w-full max-w-6xl px-4">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+          <section className="mt-20 w-full md:max-w-6xl">
+            <div className="grid md:grid-cols-3 gap-8 text-center w-full">
+              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition w-full">
                 <PenTool className="w-12 h-12 mx-auto text-purple-500 dark:text-purple-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">Easy Note Taking</h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   Quickly capture notes with a beautiful, distraction-free editor.
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition w-full">
                 <ShieldCheck className="w-12 h-12 mx-auto text-green-500 dark:text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">Secure Storage</h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   Your notes are private, encrypted, and securely stored.
                 </p>
               </div>
-              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
+              <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition w-full">
                 <Rocket className="w-12 h-12 mx-auto text-blue-500 dark:text-blue-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">Fast & Responsive</h3>
                 <p className="text-gray-600 dark:text-gray-400">
