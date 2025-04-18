@@ -36,9 +36,9 @@ const CreateNote = () => {
     setIsLoading(true);
     API.fetchNoteById({ token: session?.apiToken, id }).then((res) => {
       const data = res.data.data;
-      methods.setValue('title', data.title);
-      methods.setValue('content', data.content);
-      methods.setValue('tag', data.tag);
+      methods.setValue('title', data.title || '');
+      methods.setValue('content', data.content || '');
+      methods.setValue('tag', data.tag || '');
       setIsLoading(false);
     });
   }, [id, session?.apiToken]);
