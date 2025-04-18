@@ -22,7 +22,7 @@ const Nav = () => {
     <div className="flex items-center justify-center w-full lg:px-36 px-4 py-2 fixed top-0  backdrop-blur-md bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800 z-50">
       <div className="flex justify-between w-full max-w-[1280px]">
         <div className="flex items-center gap-6">
-          <div className="font-semibold text-xl">CloudScribe</div>
+          <img src="/logo.png" alt="logo" className="w-32 dark:invert" />
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
