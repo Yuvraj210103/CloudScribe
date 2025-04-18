@@ -20,10 +20,16 @@ const Notes = () => {
 
   useEffect(() => {
     if (!session?.apiToken) return;
-    API.fetchNotes(session?.apiToken).then((res) => {
-      setNotes(res.data.data as INote[]);
-      setIsLoading(false);
-    });
+    API.fetchNotes(session?.apiToken)
+      .then((res) => {
+        setNotes(res.data.data as INote[]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error('Something went wrong');
+        setIsLoading(false);
+      });
   }, [session?.apiToken]);
 
   const router = useRouter();

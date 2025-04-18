@@ -24,6 +24,8 @@ const DialogDrawer = ({
   isDialogFooterReq = false,
   isLoading,
   isFormModal,
+  negativeButtonText,
+  positiveButtonText,
 }: {
   children: React.ReactNode;
   opened?: boolean;
@@ -35,6 +37,8 @@ const DialogDrawer = ({
   isDialogFooterReq?: boolean;
   isLoading?: boolean;
   isFormModal?: boolean;
+  positiveButtonText?: string;
+  negativeButtonText?: string;
 }) => {
   if (window.innerWidth <= 640) {
     return (
@@ -61,7 +65,7 @@ const DialogDrawer = ({
                   // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                   negativeCallback && negativeCallback();
                 }}>
-                Cancel
+                {negativeButtonText || 'Cancel'}
               </Button>
 
               <Button
@@ -74,7 +78,7 @@ const DialogDrawer = ({
                   }
                   positiveCallback();
                 }}>
-                Okay
+                {positiveButtonText || 'Okay'}
               </Button>
             </DrawerFooter>
           )}
@@ -103,7 +107,7 @@ const DialogDrawer = ({
                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 negativeCallback && negativeCallback();
               }}>
-              Cancel
+              {negativeButtonText || 'Cancel'}
             </Button>
 
             <Button
@@ -116,7 +120,7 @@ const DialogDrawer = ({
                   setOpened(false);
                 }
               }}>
-              Okay
+              {positiveButtonText || 'Okay'}
             </Button>
           </DialogFooter>
         )}
