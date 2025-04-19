@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center lg:px-32 px-4 pb-12">
       <div className="flex flex-col gap-4 w-full max-w-[1280px]">
-        <main className="min-h-screen bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-black flex flex-col items-center justify-center px-6">
+        <main className="min-h-screen bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-black flex flex-col items-center justify-center px-6 pb-6">
           {/* Hero Section */}
           <section className="text-center space-y-6 max-w-2xl">
             <div className="flex justify-center">

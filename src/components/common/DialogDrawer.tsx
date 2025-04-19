@@ -72,11 +72,11 @@ const DialogDrawer = ({
                 isLoading={isLoading}
                 className="w-full hover:bg-blueButtonHoverBg"
                 onClick={() => {
+                  positiveCallback();
                   if (isLoading || isFormModal) return;
                   if (setOpened) {
                     setOpened(false);
                   }
-                  positiveCallback();
                 }}>
                 {positiveButtonText || 'Okay'}
               </Button>

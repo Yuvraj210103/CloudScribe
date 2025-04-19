@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
+//const baseURL = 'http://localhost:5000/api';
 
 class API {
   //* Auth API

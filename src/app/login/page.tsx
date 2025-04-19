@@ -59,6 +59,10 @@ const Login = () => {
   const [isResetFormOpened, setIsResetFormOpened] = useState(false);
 
   const sendCode = async () => {
+    if (!registeredEmail) {
+      toast.error('Please enter email');
+      return;
+    }
     try {
       setIsLoading(true);
       const res = await API.forgotPassword(registeredEmail);
